@@ -2,16 +2,25 @@
 
 Este es un sitio web básico de ejemplo para subir a GitHub y probar herramientas de analítica.
 
-## Estructura
+# Analytics Website for Heap
 
-- `index.html`: Página principal
-- `about.html`: Página de Acerca de
-- `contact.html`: Página de Contacto
-- `css/styles.css`: Archivo de estilos
-- `js/analytics.js`: Archivo de script para analítica
+This is a basic website structure for testing Heap analytics.
 
-## Instrucciones
+## Structure
 
-1. Clona el repositorio en tu máquina local.
-2. Abre `index.html`, `about.html`, y `contact.html` en tu navegador para verificar que todo funciona correctamente.
-3. Agrega el código de tu herramienta de analítica en `js/analytics.js`.
+- `index.html`: Home page
+- `about.html`: About Us page
+- `contact.html`: Contact page
+- `products.html`: Product listing page
+- `product-details.html`: Product details page
+- `cart.html`: Shopping cart page
+- `checkout.html`: Checkout page
+- `confirmation.html`: Order confirmation page
+- `css/styles.css`: Stylesheet
+- `js/analytics.js`: Script for analytics (including Heap tracking code)
+
+## Instructions
+
+1. Clone the repository to your local machine.
+2. Open the `.html` files in your browser to ensure everything is working.
+3. Add your Heap tracking ID in `js/analytics.js`.
