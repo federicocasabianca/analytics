@@ -1,31 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("Nothing to load");
-    
+    window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1})).promise.then(function() {window.amplitude.add(window.amplitudeAutocapturePlugin.plugin());window.amplitude.init('1dc04bc19b9e709dbc690b1f2e1d1381');});
     // Function to log button clicks
     function logButtonClick(buttonId) {
         console.log(`Button click logged: ${buttonId}`);
-        $.ajax({
-            url: 'https://api2.amplitude.com/2/httpapi',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': '*/*'
-        },
-        success: function () {
-            console.log(JSON.stringify({
-                "api_key": "1dc04bc19b9e709dbc690b1f2e1d1381",
-                "events": [{
-                    "device_id": localStorage.getItem('deviceId'),
-                    "event_type": "Product Added",
-                    "event_property":[{
-                        "product_id":"23413123",
-                        "quantity":3,
-                        "source":"Product List"
-                    }]
-                }]
-            }));
+        const event = 'Product Added';
+        const eventProperties = {
+          product_id: '123445566',
+          quantity: 1,
+          source: 'Product List'
+        };
+        // Log the event with the properties
+        console.log(`Logging Event`);
+        try {
+            amplitude.getInstance().logEvent(event, eventProperties);
+        } catch(e) {
+            console.error(e);
         }
-    })
     }
 
         // Add event listeners for button clicks
