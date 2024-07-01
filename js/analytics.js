@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Log the event with the properties
         console.log(`Logging Event`);
         try {
-            amplitude.getInstance().logEvent(event, eventProperties);
+            amplitude.logEvent(event, eventProperties);
         } catch(e) {
             console.error(e);
         }
